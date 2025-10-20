@@ -1,0 +1,174 @@
+/* החלה כללית על האלמנטים הפשוטים */
+body {
+    background: #f0f2f5;
+    margin: 20px;
+    font-family: system-ui, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+input, button {
+    /* ✨ הוסר display: inline-block; כדי לאפשר ליישור Flexbox לעבוד כראוי בכפתורים העליונים */
+    margin: 5px 2px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    font-size: 14px;
+}
+
+/* ✨ כלל חדש: מחזיר את ה-display: block; רק לכפתורים בתוך d-grid (כמו כפתור Change) כדי שיימתחו לרוחב מלא */
+.d-grid button {
+    display: block;
+    width: 100%;
+}
+
+
+input:focus {
+    border-color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+}
+
+button {
+    background-color: #0d6efd;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* כפתורים ספציפיים */
+.btn-success {
+    background-color: #28a745;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+}
+
+.btn-primary:hover {
+    background-color: #1557b0;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 10px;
+    text-align: center;
+}
+
+thead {
+    background: #343a40;
+    color: white;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+#result, #userChoice {
+    color: #6c757d;
+    font-size: .9rem;
+    margin-top: 8px;
+}
+
+#totalValue {
+    color: #1a73e8;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+/* מרכוז גרף הפאי - הפתרון המלא */
+#chartWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+#holdingsChart {
+    display: block;
+    max-width: 400px;
+    max-height: 400px;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* אייקונים פשוטים */
+#addBtn::before {
+    content: "➕ ";
+}
+
+#removeBtn::before {
+    content: "➖ ";
+}
+
+#totalBtn::before {
+    content: "💰 ";
+}
+
+#chooseBtn::before {
+    content: "🔄 ";
+}
+
+/* במסך קטן (למשל בניידים) */
+@media (max-width: 600px) {
+    #holdingsChart {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}

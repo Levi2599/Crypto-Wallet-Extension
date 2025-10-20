@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Virtual</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-light">
+<div class="container py-3">
+
+    <div class="text-center mb-3">
+        <h1 class="h4 mb-1">Welcome to your Crypto wallet</h1>
+        <p id="userChoice" class="small text-muted mb-0"></p>
+    </div>
+    <hr>
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <h2 class="h6 fw-semibold mb-3">Enter amount, currency type and select desired action.</h2>
+            <div class="row g-3 align-items-start">
+                <div class="col-12 col-md-7">
+                    <div class="row g-2">
+                        <div class="col-12">
+                            <label for="symbolInput" class="form-label mb-1">Crypto Symbol</label>
+                            <input id="symbolInput" list="symbolList" placeholder="Select your crypto" class="form-control form-control-sm">
+                            <datalist id="symbolList"></datalist>
+                        </div>
+                        <div class="col-12">
+                            <label for="Amount" class="form-label mb-1">Amount</label>
+                            <input type="number" id="Amount" placeholder="Enter amount" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <div class="d-flex flex-column align-items-end gap-2">
+                        <button id="addBtn" class="btn btn-success">Add</button>
+                        <button id="removeBtn" class="btn btn-danger">Remove</button>
+                        <button id="totalBtn" class="btn btn-primary">Calculate</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <h3 class="h6 fw-semibold mb-3">Portfolio Pie</h3>
+            <div id="chartWrap" class="text-center">
+                <canvas id="holdingsChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <p id="result" class="small text-muted mt-3 mb-0"></p>
+
+    <div class="card shadow-sm mb-3">
+        <div class="card-body">
+            <h3 class="h6 mt-3 mb-2">Your Holdings Overview</h3>
+            <div class="table-responsive">
+                <table id="holdingsTable" class="table table-sm table-striped table-hover text-center align-middle mb-2 table-light">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>Currency</th>
+                        <th>Amount</th>
+                        <th>Rate (USD)</th>
+                        <th>Total Value</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr><td>BTC</td><td>0.25</td><td>64213.55</td><td>16053.39 USD</td></tr>
+                    <tr><td>ETH</td><td>1.75</td><td>3187.20</td><td>5577.60 USD</td></tr>
+                    <tr><td>USDT</td><td>2500</td><td>1.00</td><td>2500.00 USD</td></tr>
+                    <tr><td>ADA</td><td>12000</td><td>0.41</td><td>4920.00 USD</td></tr>
+                    <tr><td>DOGE</td><td>25000</td><td>0.12</td><td>3000.00 USD</td></tr>
+                    </tbody>
+                    <tfoot class="table-group-divider">
+                    <tr class="fw-bold table-secondary">
+                        <td colspan="3" class="text-start">Grand Total:</td>
+                        <td id="totalValueFooter" class="text-end"></td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <p id="totalValue" class="fw-semibold small mb-0"></p>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h3 class="h6 fw-semibold mb-3">Choose your currency</h3>
+            <div class="row g-2 align-items-center">
+                <div class="col-12 col-md-8">
+                    <div class="form-floating">
+                        <input id="currencyInput" list="currencyList" placeholder="Select your currency" class="form-control">
+                        <label for="currencyInput">Currency</label>
+                        <datalist id="currencyList"></datalist>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 d-grid">
+                    <button id="chooseBtn" class="btn btn-warning">Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div><script src="chart.umd.js"></script>
+<script src="dao.js"></script>
+<script src="service.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

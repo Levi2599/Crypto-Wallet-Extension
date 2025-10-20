@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Virtual Coin Manager",
+  "version": "1.0",
+  "description": "Manage your virtual coins and calculate total worth",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Coin Manager"
+  },
+  "permissions": ["storage"]
+  }
